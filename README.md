@@ -1,4 +1,4 @@
-#ACDH-CH Wordpress Docker based on Bitnami Wordpress
+# ACDH-CH Wordpress Docker based on Bitnami Wordpress
 
 ## Extended files
 - Dockerfile line 11:  unzip git 
