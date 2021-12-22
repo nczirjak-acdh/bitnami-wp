@@ -1,3 +1,30 @@
+#ACDH-CH Wordpress Docker based on Bitnami Wordpress
+
+## Extended files
+- Dockerfile line 11:  unzip git 
+- 5/debian-10/rootfs/download-extra.sh : contains the required plugins and theme
+- 5/debian-10/rootfs/opt/bitnami/scripts/wordpress/activate-acdh-plugins.sh : this will activate the plugins and the theme
+
+
+## First run:
+If you just installed the wordpress, then please go through the Polylang setup wizard and add at least English language (German is also supported by the theme.).
+
+
+##Build:
+
+- Go to 5/debian-10/ and run "docker build -t DOCKER_USERNAME/my-custom-wordpress:latest ."
+
+- Change the wordpress image name in the 5/debian-10/docker-compose.yml file -> 
+"
+wordpress:
+   image: 'DOCKER_USERNAME/my-custom-wordpress:latest'
+"
+
+- docker-compose up
+
+
+--------------------------------------------------------------
+
 # WordPress packaged by Bitnami
 
 ## What is WordPress?

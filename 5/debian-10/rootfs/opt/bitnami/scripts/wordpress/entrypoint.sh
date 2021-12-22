@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # shellcheck disable=SC1091
-echo "-----------------entrypoint file"
 set -o errexit
 set -o nounset
 set -o pipefail
@@ -23,6 +22,7 @@ if [[ "$1" = "/opt/bitnami/scripts/$(web_server_type)/run.sh" || "$1" = "/opt/bi
     /opt/bitnami/scripts/php/setup.sh
     /opt/bitnami/scripts/mysql-client/setup.sh
     /opt/bitnami/scripts/wordpress/setup.sh
+    /opt/bitnami/scripts/wordpress/activate-acdh-plugins.sh
     /post-init.sh
     info "** WordPress setup finished! **"
 fi
@@ -30,8 +30,3 @@ fi
 echo ""
 exec "$@"
 
-nami_initialize apache php mysql-client wordpress
-su daemon -s /bin/bash -c '/opt/bitnami/wp-cli/bin/wp plugin activate bbpress'
-su daemon -s /bin/bash -c '/opt/bitnami/wp-cli/bin/wp theme activate gambit'
-info "Starting wordpress... "
-ssssssssssss

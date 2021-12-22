@@ -48,4 +48,4 @@ EXPOSE 8080 8443
 
 USER 1001
 ENTRYPOINT [ "/opt/bitnami/scripts/wordpress/entrypoint.sh" ]
-CMD [ "/opt/bitnami/scripts/apache/run.sh" ]
+CMD [ "/opt/bitnami/scripts/apache/run.sh"]
